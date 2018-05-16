@@ -1,0 +1,24 @@
+*               text=auto
+
+*.txt           text
+*.TXT           text
+*.md            text
+.gitattributes  text
+.gitignore      text
+
+*.bmp              binary
+*.eps              binary
+*.gif              binary
+*.ico              binary
+*.jpeg             binary
+*.jpg              binary
+*.pdf              binary
+*.png              binary
+*.ps               binary
+*.tga              binary
+*.tif              binary
+*.tiff             binary
+*.dot              binary
+*.doc              binary
+*.docx             binary
+
