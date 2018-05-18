@@ -531,3 +531,7 @@ Think of ways to improve the game:
 -   Implement scoring and display the score.
 
 Look at Unity's excellent website to learn how to do all these things and more.
+
+## License
+
+SPDX-License-Identifier: CC-BY-SA-4.0

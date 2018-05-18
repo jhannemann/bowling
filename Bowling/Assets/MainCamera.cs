@@ -1,4 +1,9 @@
-﻿using System.Collections;
+﻿// Bowling - A simple Unity 3D demo bowling game
+// Copyright (C) 2018 Dr.-Ing. Jens Hannemann - j.hannemann@ieee.org
+//
+// SPDX-License-Identifier: GPL-3.0-or-later
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
