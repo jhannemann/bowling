@@ -765,6 +765,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2417360552ed04caa97f6d3c74d36601, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1513727235 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1444532756651228, guid: f49337a002ee14bdf85ac8b40e14046a,
+    type: 2}
+  m_PrefabInternal: {fileID: 1431766254}
 --- !u!1 &1528779054
 GameObject:
   m_ObjectHideFlags: 0
@@ -940,6 +945,7 @@ GameObject:
   - component: {fileID: 2094649981}
   - component: {fileID: 2094649980}
   - component: {fileID: 2094649979}
+  - component: {fileID: 2094649984}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1017,3 +1023,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2094649984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2094649978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4827c9d7c0894459eb4c940fb48281ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distance: -3
+  height: 1
+  objectToFollow: {fileID: 1513727235}
