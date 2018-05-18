@@ -18,7 +18,7 @@ which contains a single directional light source and a default main camera.
 This scene is named *untitled*.
 Name and save the scene by selecting `File->Save Scene as...`
 and name the scene "Scene 1".
-Your assets pane at the bottom of the screen should now contain your saved scene.
+Your Assets pane at the bottom of the screen should now contain your saved scene.
 
 ## Create the Bowling Lane and the Ball
 
@@ -43,7 +43,7 @@ The R, G, and B components should be set to (255, 215, 0),
 resulting in a darkish yellow.
 To make the lane shiny,
 select a *Metallic* value of 0 and a *Smoothness* of 0.6.
-Attach the material to the lane by dragging the material from the Assets Pane onto the Lane object in the Scene Pane.
+Attach the material to the lane by dragging the material from the Assets pane onto the Lane object in the Scene pane.
 
 ### The Ball
 
@@ -61,10 +61,10 @@ Set the color to black (0, 0, 0),
 and choose a *Metallic* value of 0 and a *Smoothness* of 0.8.
 Attach the material to the ball just like with the lane.
 
-### Playing Back the Scene
+### Playing the Scene
 
-When we play back the scene by hitting the *Play* button at the center top,
-the ball keeps being suspendin in mid-air.
+When we play the scene by hitting the *Play* button at the center top,
+the ball keeps being suspended in mid-air.
 This is because it is not subject to gravity,
 which is handled by Unity's *physics engine*.
 
@@ -72,8 +72,8 @@ In order to make a game object subject to the physics simulation,
 it needs a *RigidBody* component.
 Add it to the ball by clicking on the ball object in the scene and then select `Add Component->Physics->Rigidbody`.
 
-Playing back the scene again,
-the ball should now fall to the ground and come to rest on the lane.
+Playing the scene again,
+the ball will now fall to the ground and come to rest on the lane.
 
 ### Save the Scene
 
@@ -86,7 +86,7 @@ A bowling lane is not square,
 so let's fix that.
 We can use the *Scale* part of the lane's transform component for that.
 Set the *Scale* to (0.1, 0, 2).
-This corresponds to a width of 1 meter and a lenght of 20 meter,
+This corresponds to a width of 1 meters and a lenght of 20 meters,
 which is pretty close to the size of a standard bowling lane.
 
 The ball needs to be at the start of the lane.
@@ -110,9 +110,10 @@ we will write our first couple of lines of code in a programming language called
 ### Creating Our First Script
 
 We need to add a C# script to our ball.
-Select the ball in the scene pane and in the inspector select `Add Component->New Script`.
+Select the ball in the Scene pane and in the inspector select `Add Component->New Script`.
 Name the script the same as the object,
-i.e. "Ball".
+i.e. "Ball"
+(spelling and capitalization must *exactly* match the object name).
 Make sure the language selected is "C Sharp".
 
 Once created,
@@ -142,7 +143,7 @@ public class Ball : MonoBehaviour {
 
 We will add a public attribute named `speed` and a private one named `rigidBody`.
 In the `Start ()` method,
-we will retrive the ball's Rigidbody component.
+we will retrieve the ball's Rigidbody component.
 We will the use it in the `Update ()` method to set the ball's speed when the user presses the space bar.
 
 The resulting code looks like this:
@@ -172,13 +173,14 @@ public class Ball : MonoBehaviour {
 ```
 
 After saving the script,
-the Ball inspector should now show the speed set to 10 in the inspector.
-Playing back the scene,
-the ball should now shoot down the lane,
+the Ball inspector will show the speed set to 10.
+Playing the scene,
+the ball will now shoot down the lane,
 decelerating quickly.
 
 You will note that the ball does not exaclty behave like a real bowling ball.
-In part this is because at the default mass of 1 kg,
+In part this is because,
+at the default mass of 1 kg,
 it is too light.
 We will change that later.
 On top of that,
@@ -192,7 +194,8 @@ This is not strictly needed at this point,
 but in a real bowling game,
 we want to create many balls,
 most of them sharing the same properties.
-The same will hold true for our pins.
+The same will hold true for our pins,
+where it will prove very useful.
 
 Unity allows for easy replication of object that share the same properties via a concept called *Prefabs*.
 To create a prefab,
@@ -218,7 +221,7 @@ as previously mentioned,
 by default the game object is not subject to physics unless it has a Rigidbody component.
 Add it just as you did for the ball and stick to the default values for now.
 
-Playing back the scene now,
+Playing the scene now,
 the ball will hit and topple the pin.
 
 Save the scene.
@@ -278,7 +281,7 @@ Note that all connected pins in the scene change their size in unison.
 
 ### Adding a Backstop
 
-Play back the scene.
+Play the scene.
 You will notice that the ball barely topples the first pin.
 However,
 after the ball has been shot,
@@ -313,7 +316,7 @@ A good speed for our purpose is 13 m/s.
 Change the speed in the Ball prefab's script component to 13 m/s.
 Note that this does not change the value of the `speed` variable in the corresponding C# script.
 
-Playing back the scene now,
+Playing the scene now,
 you should see a much improved behavior of the ball and the pins.
 
 Save the scene.
@@ -390,7 +393,7 @@ as the ball would not come to a rest until we apply an additional force to count
 A more intutitive and easier way is to simply move the object proportional to its axis input and make the object stop when there is no input.
 
 This mode of operation,
-where an objects position is directly manipulated independent of the pysics engine is called *kinematic*.
+where an objects position is directly manipulated independently of the pysics engine is called *kinematic*.
 
 We will therefore set the Ball to kinematic by default by checking the corresponding box in its prefab's Rigidbody component.
 
@@ -441,7 +444,7 @@ Also, of course,
 we only need to get axis input until the ball has been thrown.
 
 You will also note that we can easily move the ball off the lane.
-It is farily simple to write code to keep the ball inside the lane at all times,
+It is fairly simple to write code to keep the ball inside the lane at all times,
 but for simplicity's sake,
 we will not do that here.
 
@@ -469,10 +472,10 @@ We will need three public attributes.
 
 The first one will represent the game object to follow.
 The second one will determine the height of the camera above that object,
-and the third onw will be the distance from that object.
+and the third one will be the distance from that object.
 
 Positional updates from the physics engine happen in the `FixedUpdate ()` method rather than the `Update ()` method.
-Adjusting the camera position must therefor happen in that method.
+Adjusting the camera position when following a non-kinematic object must therefore happen in that method.
 The final `MainCamera` script looks like this:
 
 ```C#
@@ -505,7 +508,7 @@ public class MainCamera : MonoBehaviour {
 ```
 
 The camera's *x* position is kept at the center of the lane.
-The *y* and *z* components are offset by the corresponding heigh and distance.
+The *y* and *z* components are offset by the corresponding height and distance.
 The object to follow can be empty (i.e. `null`).
 In this case the script does nothing.
 The object to follow can be set by dragging an object from the scene
