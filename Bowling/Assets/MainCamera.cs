@@ -10,7 +10,7 @@ using UnityEngine;
 public class MainCamera : MonoBehaviour {
 	public float distance = 10;
 	public float height = 2;
-    public GameObject objectToFollow;
+	public GameObject objectToFollow;
 
 	// Use this for initialization
 	void Start () {

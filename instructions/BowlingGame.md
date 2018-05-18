@@ -178,7 +178,7 @@ Playing the scene,
 the ball will now shoot down the lane,
 decelerating quickly.
 
-You will note that the ball does not exaclty behave like a real bowling ball.
+You will note that the ball does not exactly behave like a real bowling ball.
 In part this is because,
 at the default mass of 1 kg,
 it is too light.
@@ -197,10 +197,10 @@ most of them sharing the same properties.
 The same will hold true for our pins,
 where it will prove very useful.
 
-Unity allows for easy replication of object that share the same properties via a concept called *Prefabs*.
+Unity allows for easy replication of objects that share the same properties via a concept called *Prefabs*.
 To create a prefab,
 simply drag it from the Scene pane onto the Assets pane.
-Any changes to the prefab in the Assets pane will immediately reflected in all connected prefabs in the Scene pane.
+Any changes to the prefab in the Assets pane will immediately be reflected in all connected prefabs in the Scene pane.
 
 Save the scene before taking the next step.
 
@@ -252,7 +252,7 @@ With the prefab in place,
 we can now create more copies of the head pin.
 Right-click on the head pin in the Scene pane.
 Then,
-paste the pin nine times,
+copy and paste the pin nine times,
 creating pins named "Pin (1)" through "Pin (9)".
 Set the following positions:
 
@@ -390,7 +390,7 @@ This makes aiming the ball quite difficult,
 though,
 as the ball would not come to a rest until we apply an additional force to counter its inertia to eventually make it stop.
 
-A more intutitive and easier way is to simply move the object proportional to its axis input and make the object stop when there is no input.
+A more intuitive and easier way is to simply move the object proportional to its axis input and make the object stop when there is no input.
 
 This mode of operation,
 where an objects position is directly manipulated independently of the pysics engine is called *kinematic*.
@@ -437,7 +437,7 @@ As you see,
 we have introduced a new attribute `horizontalSpeed` which determines how fast we move the ball on horizontal axis input.
 
 Since the Ball prefab now is kinematic by default,
-the ball needs to be subject to the physics engine when thrown.
+the ball needs to be made subject to the physics engine when thrown.
 This is accomplished by the `ridigbody.isKinematic = false;` line just after the space bar has been pressed.
 
 Also, of course,
@@ -486,7 +486,7 @@ using UnityEngine;
 public class MainCamera : MonoBehaviour {
 	public float distance = 10;
 	public float height = 2;
-    public GameObject objectToFollow;
+	public GameObject objectToFollow;
 
 	// Use this for initialization
 	void Start () {
