@@ -519,8 +519,19 @@ the camera will follow the ball.
 Unfortunately,
 this is also true if the ball should happen to fall off the lane.
 
-Fixing this is easy,
-but we have reached the end of the tutorial now.
+## Organizing the Project
+
+As you keep adding more assets to the game,
+it is a good idea to organize them into appropriate folders.
+Right-click on the Assets pane in the Project tab and select `Create->Folder`.
+Create 4 folders with the following names:
+-   Scenes
+-   Scripts
+-   Materials
+-   Prefabs
+
+When done,
+move the assets into their corresponding folders by dragging and dropping them.
 
 ## Where to Go From Here
 
