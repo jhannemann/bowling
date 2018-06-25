@@ -27,7 +27,7 @@ Your Assets pane at the bottom of the screen should now contain your saved scene
 The lane will be made from the *plane* game object type in Unity.
 Create it by selecting `GameObject->3D Object->Plane` from the menu.
 Its center is located at the center of our game world,
-indicated by the position (0,0,0) in the *Transform* component.
+indicated by the position `(0,0,0)` in the *Transform* component.
 Rename the object to "Lane".
 
 The default color is not very appealing.
@@ -39,7 +39,7 @@ select `Assets->Create->Material` and name the new material "Lane Material".
 When you click on it in the Assets pane,
 you can set the properties in the Inspector pane on the right.
 Set the *Albedo* by clicking on the color picker.
-The R, G, and B components should be set to (255, 215, 0),
+The R, G, and B components should be set to `(255, 215, 0)`,
 resulting in a darkish yellow.
 To make the lane shiny,
 select a *Metallic* value of 0 and a *Smoothness* of 0.6.
@@ -57,7 +57,7 @@ This will make the ball float in mid-air.
 
 The ball material will be a shiny black.
 Once again create a new material named "Ball Material".
-Set the color to black (0, 0, 0),
+Set the color to black `(0, 0, 0)`,
 and choose a *Metallic* value of 0 and a *Smoothness* of 0.8.
 Attach the material to the ball just like with the lane.
 
@@ -85,14 +85,14 @@ it is always a good idea to save your scene via `File->Save Scenes`.
 A bowling lane is not square,
 so let's fix that.
 We can use the *Scale* part of the lane's transform component for that.
-Set the *Scale* to (0.1, 0, 2).
+Set the *Scale* to `(0.1, 0, 2)`.
 This corresponds to a width of 1 meters and a lenght of 20 meters,
 which is pretty close to the size of a standard bowling lane.
 
 The ball needs to be at the start of the lane.
-Set the ball transform's position to (0, 0.1, -10).
+Set the ball transform's position to `(0, 0.1, -10)`.
 The ball is also too large.
-Set its scale to (0.2, 0.2, 0.2),
+Set its scale to `(0.2, 0.2, 0.2)`,
 resulting in a fairly standard diameter of 20 cm.
 
 The camera now is too close to the edge of the lane and we cannot see the ball.
@@ -208,10 +208,11 @@ Save the scene before taking the next step.
 
 Our first pin is a simple cylinder.
 Create it by selecting `GameObject->3D Object->Cylinder`.
-Set its transform's position to (0, 0.19, 0) and its scale to (0.06, .19, 0.06).
+Set its transform's position to `(0, 0.19, 0)`
+and its scale to `(0.06, 0.19, 0.06)`.
 
 Create a new material named "Pin Material",
-and set its *Albedo* to white (255, 255, 255),
+and set its *Albedo* to white `(255, 255, 255)`,
 and its *Metallic* component to 0.25 and its *Smoothness* component to 0.8.
 
 When you play back the scene and shoot the ball,
@@ -256,17 +257,17 @@ copy and paste the pin nine times,
 creating pins named "Pin (1)" through "Pin (9)".
 Set the following positions:
 
-| Pin Number |        Position       |
-|:----------:|:---------------------:|
-|    (1)     | ( 0.15 , 0.19 , 0.26) |
-|    (2)     | (-0.15 , 0.19 , 0.26) |
-|    (3)     | ( 0    , 0.19 , 0.52) |
-|    (4)     | (-0.3  , 0.19 , 0.52) |
-|    (5)     | ( 0.3  , 0.19 , 0.52) |
-|    (6)     | ( 0.15 , 0.19 , 0.78) |
-|    (7)     | (-0.15 , 0.19 , 0.78) |
-|    (8)     | (-0.45 , 0.19 , 0.78) |
-|    (9)     | ( 0.45 , 0.19 , 0.78) |
+| Pin Number |         Position        |
+|:----------:|:-----------------------:|
+|    (1)     | `( 0.15 , 0.19 , 0.26)` |
+|    (2)     | `(-0.15 , 0.19 , 0.26)` |
+|    (3)     | `( 0.0  , 0.19 , 0.52)` |
+|    (4)     | `(-0.3  , 0.19 , 0.52)` |
+|    (5)     | `( 0.3  , 0.19 , 0.52)` |
+|    (6)     | `( 0.15 , 0.19 , 0.78)` |
+|    (7)     | `(-0.15 , 0.19 , 0.78)` |
+|    (8)     | `(-0.45 , 0.19 , 0.78)` |
+|    (9)     | `( 0.45 , 0.19 , 0.78)` |
 
 ### Change the Pin Scale on the Prefab
 
@@ -276,7 +277,7 @@ Actual bowling pins are about 12 cm in diameter,
 not the 6 cm we used originally.
 
 To change all pin diameters at the same time,
-select the pin prefab in the Asset pane and set its scale to (0.12, 0.19, 0.12).
+select the pin prefab in the Asset pane and set its scale to `(0.12, 0.19, 0.12)`.
 Note that all connected pins in the scene change their size in unison.
 
 ### Adding a Backstop
@@ -295,7 +296,8 @@ we will add a backstop.
 Create a cube game object by selecting `GameObject->3D Object->Cube`.
 Name it "Backstop" and make it a child of the "Pins" object.
 
-Set its transform position to (0, 0.25, 2) and its scale to (1, 0.5, 0.1).
+Set its transform position to `(0, 0.25, 2)`
+and its scale to `(1, 0.5, 0.1)`.
 Since we want the ball to hit it and stop rather than bounce off of it,
 do *not* add a Rigidbody component to it to disable physics simulation.
 
@@ -532,6 +534,32 @@ Create 4 folders with the following names:
 
 When done,
 move the assets into their corresponding folders by dragging and dropping them.
+
+## Importing the Lane Model
+
+In the top-level project folder on GitHub,
+there is a folder named *assets*.
+It contains two models,
+which have been created using a 3D design program.
+In order to import it,
+create a folder named *Models* in the assets folder in the project pane.
+Enter into that folder and select `Assets->Import New Asset...` from the menu.
+Point the file dialog to the location of the model and open it.
+On the import settings,
+make sure that the model scale is set to `1`.
+Uncheck the `Import Animation` and `Import Materials` options,
+as the model does not contain useful animation or material information.
+When you are done importing,
+add the model as a game object to the scene by dragging it into the scene pane.
+Note that its name in the scene pane is blue,
+making it a prefab.
+Any changes you subsequently make to the import settings will be reflected in all game objects using that model.
+Also note that the actual mesh is named `Body1` and is a child of an
+---otherwise empty---
+game object named `Lane`.
+Attach the lane material to the body by dragging it onto the lane.
+
+Delete the previous lane from the scene and set the new lane's position to `(0, -0.1, 10)`.
 
 ## Where to Go From Here
 
