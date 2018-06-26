@@ -11,4 +11,7 @@ Going through the repository step by step as described in the instruction file,
 this simple bowling game touches on the basics of Unity,
 most notably physics using rigid bodies, kinematics, and prefabs.
 
+I have subsequently expanded it to demonstrate importing models created with Fusion 360 for the 2018 [Verizon Foundation Innovative Learning](https://www.verizon.com/about/responsibility/verizon-innovative-learning) Summer Program,
+also hosted at KSU.
+
 Enjoy!

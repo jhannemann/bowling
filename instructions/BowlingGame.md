@@ -561,6 +561,45 @@ Attach the lane material to the body by dragging it onto the lane.
 
 Delete the previous lane from the scene and set the new lane's position to `(0, -0.1, 10)`.
 
+## Add Colliders to the Lane
+
+When you play the game now,
+you will find that the pins and the ball will immediately fall through the lane
+into the void below.
+This is because,
+by default,
+the import process will not generate colliders for the meshes in the model.
+The reason is that mesh colliders can drastically slow down physics calculations and thus the frame rate of a game.
+Luckily,
+for most models,
+a simple box or sphere collider is appropriate and much faster.
+
+Since most models consist of multiple meshes that can be covered by a common set of colliders,
+it is a good idea to attach the colliders to the top-level game object.
+So in the scene,
+select the `Lane` object
+(i.e. the parent of `Body1`).
+Then,
+add 5 box collider components with the following settings:
+|  Collider  |          Center          |           Size          |
+|:----------:|:------------------------:|:-----------------------:|
+|    (1)     | `( 0    ,  0    , 10 )`  | `( 1    , 0.2  , 20  )` |
+|    (2)     | `(-0.95 ,  0    , 10 )`  | `( 0.1  , 0.2  , 20  )` |
+|    (3)     | `( 0.95 ,  0    , 10 )`  | `( 0.1  , 0.2  , 20  )` |
+|    (4)     | `(-0.75 , -0.15 , 10 )`  | `( 0.5  , 0.1  , 20  )` |
+|    (5)     | `( 0.75 , -0.15 , 10 )`  | `( 0.5  , 0.1  , 20  )` |
+
+When you play the game now,
+the ball will stay on the lane.
+It will also roll and stay in the gutter when thrown accordingly.
+When you hit the pins,
+you will see that they also will roll into the gutter.
+Since the box colliders are not a perfect fit for the gutters,
+you may see some parts of the pins being submerged into the gutter surface.
+This can be prevented by adding an additional,
+angled box collider that will result in the gutter's curve being followed more exactly.
+Adding all these colliders is still considerably faster than using a full-blown mesh collider.
+
 ## Where to Go From Here
 
 Think of ways to improve the game:
