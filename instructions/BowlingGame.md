@@ -633,11 +633,20 @@ but which only has a couple of elements.
 When you play the game,
 this pin should behave just as expected when being hit.
 
+## Replace the Original Pins
+
+Delete all the original pins from the `Pins` hierarchy in the scene.
+Then,
+delete the original pin prefab.
+Create a new pin prefab by dragging the newly created pin into the *Prefabs* folder.
+Now move the pin in the scene into the `Pins` hierarchy and duplicate it 9 times.
+Set the *x* and *z* position components to the values of the original pins to recreate the standard pin layout.
+
 ## Where to Go From Here
 
 Think of ways to improve the game:
 
--   Keep the ball on the lane.
+-   Keep the ball on the lane when aiming.
 -   Create a second round by removing toppled pins and throw the ball again for a spare.
 -   Implement scoring and display the score.
 
