@@ -581,6 +581,7 @@ select the `Lane` object
 (i.e. the parent of `Body1`).
 Then,
 add 5 box collider components with the following settings:
+
 |  Collider  |          Center          |           Size          |
 |:----------:|:------------------------:|:-----------------------:|
 |    (1)     | `( 0    ,  0    , 10 )`  | `( 1    , 0.2  , 20  )` |
