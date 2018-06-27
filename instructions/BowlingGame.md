@@ -583,7 +583,7 @@ select the `Lane` object
 Then,
 add 5 box collider components with the following settings:
 
-|  Collider  |          Center          |           Size          |
+| Collider   |          Center          |           Size          |
 |:----------:|:------------------------:|:-----------------------:|
 |    (1)     | `( 0    ,  0    , 10 )`  | `( 1    , 0.2  , 20  )` |
 |    (2)     | `(-0.95 ,  0    , 10 )`  | `( 0.1  , 0.2  , 20  )` |
@@ -643,6 +643,22 @@ delete the original pin prefab.
 Create a new pin prefab by dragging the newly created pin into the *Prefabs* folder.
 Now move the pin in the scene into the `Pins` hierarchy and duplicate it 9 times.
 Set the *x* and *z* position components to the values of the original pins to recreate the standard pin layout.
+
+## Move the Pins and Create the Ball Pit
+
+Move the pins and backstop to the end of the lane by setting the position of the *Pins* game object
+(which contains the pins and the backstop)
+to `(0, 0, 8)`.
+Change the scale of the backstop to `(2.2, 1.25, 0.1)`.
+Create a new material named *Pit Material* and set its albedo to black `(0, 0, 0, 1)` and assign it to the backstop.
+
+In the *Pins* game object,
+create two cubes named *Left Wall* and *Right Wall*.
+Assign the pit material to them and set the left wall's position to `(-1.05, 0.25, 1)` and its scale to `(0.1, 1.25, 2)`.
+Set the right wall's position to `(1.05, 0.25, 1)` and its scale to `(0.1, 1.25, 2)`.
+
+To account for the longer lane,
+change the ball speed to 16 m/s and set the angular drag to `0.005`.
 
 ## Where to Go From Here
 
