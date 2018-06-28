@@ -714,6 +714,43 @@ Create a new material and call it *Wall Material*.
 Set the albedo to `(144, 51, 197, 255)`
 and assign it to the newly created walls.
 
+## Reload the Scene after the Throw
+
+You can use Unity's *Scene Manager* to reload the scene after the ball comes to rest after a throw.
+
+Modify the ball script by adding the line
+
+```C#
+using UnityEngine.SceneManagement;
+```
+after the other `using` statments at the top of the script.
+
+Then, add a `FixedUpdate()` method like this:
+
+```C#
+void FixedUpdate() {
+	  if (thrown && rigidBody.IsSleeping()) {
+		    SceneManager.LoadScene("Scene 1");
+	}
+}
+```
+
+The `IsSleeping()` method essentially checks whether an object has come to rest in the physics engine.
+If so and if the object has previously been thrown,
+the ball is at rest in the ball pit,
+and the code then tells Unity to reload the scene for playing again.
+
+The default sensitivity for `IsSleeping` is so high that you may have to wait a long time for the ball to come to rest.
+You can change the setting in `Edit->Project Settings->Physics`.
+A good value is `0.02`,
+although you may have to experiment what the best setting may be for your game.
+
+When the scene is reloaded,
+the scene lighting gets darker.
+This is a peculiarity of the Unity Editor and will not happen in a deployed game.
+You can get rid of this artifact by selecting `Window->Lighting->Settings`,
+unchecking `Auto Generate`, and click the `Generate Lighting` button.
+
 ## Where to Go From Here
 
 Think of ways to improve the game:

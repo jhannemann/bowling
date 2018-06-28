@@ -6,6 +6,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Ball : MonoBehaviour {
 
@@ -31,6 +32,12 @@ public class Ball : MonoBehaviour {
 			thrown = true;
 			rigidBody.isKinematic = false;
 			rigidBody.velocity = new Vector3 (0, 0, speed);
+		}
+	}
+
+	void FixedUpdate() {
+		if (thrown && rigidBody.IsSleeping()) {
+			SceneManager.LoadScene("Scene 1");
 		}
 	}
 }
