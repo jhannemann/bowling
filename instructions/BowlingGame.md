@@ -650,7 +650,7 @@ Move the pins and backstop to the end of the lane by setting the position of the
 (which contains the pins and the backstop)
 to `(0, 0, 8)`.
 Change the scale of the backstop to `(2.2, 1.25, 0.1)`.
-Create a new material named *Pit Material* and set its albedo to black `(0, 0, 0, 1)` and assign it to the backstop.
+Create a new material named *Pit Material* and set its albedo to black `(0, 0, 0, 255)` and assign it to the backstop.
 
 In the *Pins* game object,
 create two cubes named *Left Wall* and *Right Wall*.
@@ -659,6 +659,27 @@ Set the right wall's position to `(1.05, 0.25, 1)` and its scale to `(0.1, 1.25,
 
 To account for the longer lane,
 change the ball speed to 16 m/s and set the angular drag to `0.005`.
+
+## Create an Alley Prefab
+
+Create an empty game object and name it *Alley*.
+Make sure its position is `(0, 0, 0)`.
+Move the lane and pins into the alley,
+making them child objects.
+
+In the *Alley* object,
+create three planes named *Ground Left*, *Ground Right*, and *Ground Front*.
+Set their transforms to the following values:
+
+| Ground |       Position       |       Scale        |
+|:------:|:--------------------:|:------------------:|
+| Left   | `( -2 , 0.01 ,  0 )` | `( 0.2 , 1 , 2  )` |
+| Right  | `( -2 , 0.01 ,  0 )` | `( 0.2 , 1 , 2  )` |
+| Front  | `(  0 , 0.01 , -12)` | `( 0.6 , 1 , 0.4)` |
+
+Create a new material named *Ground Material* and set its albedo to `(0, 167, 255, 255)` and assign it to the three ground planes.
+
+Make the alley into a prefab by dragging it into the *Prefabs* folder.
 
 ## Where to Go From Here
 
