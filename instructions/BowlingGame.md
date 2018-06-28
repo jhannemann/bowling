@@ -681,6 +681,39 @@ Create a new material named *Ground Material* and set its albedo to `(0, 167, 25
 
 Make the alley into a prefab by dragging it into the *Prefabs* folder.
 
+## Duplicate the Alley and Create Surrounding Walls
+
+Duplicate the alley prefab 6 times and set their positions as follows:
+
+| Alley Number |      Position     |
+|:------------:|:-----------------:|
+|     (1)      | `(  -6 , 0 , 0 )` |
+|     (2)      | `(   6 , 0 , 0 )` |
+|     (3)      | `( -12 , 0 , 0 )` |
+|     (4)      | `(  12 , 0 , 0 )` |
+|     (5)      | `( -18 , 0 , 0 )` |
+|     (6)      | `(  18 , 0 , 0 )` |
+
+Create three planes at the scene's top level
+and name them *Back Wall*, *Left Wall*, and *Right Wall*,
+respectively.
+Set their positions, rotations, and scales as follows:
+
+| Wall  |       Position      |        Scale        |       Rotation      |
+|:-----:|:-------------------:|:-------------------:|:-------------------:|
+| Back  | `(   0 , 2 ,  10 )` | `( 4.2 , 1 , 0.4 )` | `( -90 , 0 ,   0 )` |
+| Left  | `( -21 , 2 ,  -2 )` | `( 0.4 , 1 , 2.4 )` | `(   0 , 0 , -90 )` |
+| Right | `(  21 , 2 ,  -2 )` | `( 0.4 , 1 , 2.4 )` | `(   0 , 0 ,  90 )` |
+
+Since by default,
+the graphics engine does not render the back faces of planes,
+you need to set the rotation of the planes
+so that all fronts face to the inside of the room.
+
+Create a new material and call it *Wall Material*.
+Set the albedo to `(144, 51, 197, 255)`
+and assign it to the newly created walls.
+
 ## Where to Go From Here
 
 Think of ways to improve the game:
