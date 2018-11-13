@@ -10,10 +10,10 @@ using UnityEngine.SceneManagement;
 
 public class Ball : MonoBehaviour {
 
-	public float speed = 10;
+	public float speed;
 	private Rigidbody rigidBody;
 	private bool thrown = false;
-	public float horizontalSpeed = 0.1f;
+	public float horizontalSpeed;
 
 	// Use this for initialization
 	void Start () {
