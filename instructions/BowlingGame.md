@@ -155,7 +155,7 @@ using UnityEngine;
 
 public class Ball : MonoBehaviour {
 
-	public float speed = 10;
+	public float speed;
 	private Rigidbody rigidBody;
 
 	// Use this for initialization
@@ -173,7 +173,8 @@ public class Ball : MonoBehaviour {
 ```
 
 After saving the script,
-the Ball inspector will show the speed set to 10.
+the Ball inspector will show the speed as zero.
+In the editor, set the speed to 10 m/s.
 Playing the scene,
 the ball will now shoot down the lane,
 decelerating quickly.
@@ -316,7 +317,6 @@ At 10 m/s,
 the original ball speed is realistic but too low for the lane's current physical properties.
 A good speed for our purpose is 13 m/s.
 Change the speed in the Ball prefab's script component to 13 m/s.
-Note that this does not change the value of the `speed` variable in the corresponding C# script.
 
 Playing the scene now,
 you should see a much improved behavior of the ball and the pins.
@@ -487,8 +487,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MainCamera : MonoBehaviour {
-	public float distance = -3;
-	public float height = 1;
+	public float distance;
+	public float height;
 	public GameObject objectToFollow;
 
 	// Use this for initialization
@@ -512,6 +512,7 @@ public class MainCamera : MonoBehaviour {
 
 The camera's *x* position is kept at the center of the lane.
 The *y* and *z* components are offset by the corresponding height and distance.
+In the editor, set the height to 1 m and the distance to -3 m.
 The object to follow can be empty (i.e. `null`).
 In this case the script does nothing.
 The object to follow can be set by dragging an object from the scene

@@ -8,16 +8,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MainCamera : MonoBehaviour {
-	public float distance = 3;
-	public float height = 1;
+	public float distance;
+	public float height;
 	public GameObject objectToFollow;
-
-	// Use this for initialization
-	void Start () {
-		
-	}
 	
-	// Update is called once per frame
 	void LateUpdate () {
 		if (objectToFollow == null)
 			return;
